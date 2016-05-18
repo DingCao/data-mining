@@ -1,0 +1,1089 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"err",
+				"error_val"
+			],
+			[
+				"validate",
+				"validated_file"
+			],
+			[
+				"co",
+				"cost_trained"
+			],
+			[
+				"X",
+				"X_train"
+			],
+			[
+				"error",
+				"error_val"
+			],
+			[
+				"valida",
+				"validated_file"
+			],
+			[
+				"e",
+				"error_train"
+			],
+			[
+				"v",
+				"validation_file"
+			],
+			[
+				"M_PARAM_",
+				"M_PARAM_VALIDATE"
+			],
+			[
+				"M_",
+				"M_PARAM_TRAIN"
+			],
+			[
+				"m",
+				"M_PARAM_TRAIN"
+			],
+			[
+				"h",
+				"hstack"
+			],
+			[
+				"x_vali",
+				"x_validation_file"
+			],
+			[
+				"x_",
+				"x_train_file"
+			],
+			[
+				"train",
+				"train_file"
+			],
+			[
+				"if",
+				"ifmain	if __name__ == '__main__'"
+			],
+			[
+				"x_v",
+				"x_validation_file_name"
+			],
+			[
+				"x_tain",
+				"x_train_file"
+			],
+			[
+				"out",
+				"out_file_name"
+			],
+			[
+				"Xand",
+				"XandYtest"
+			],
+			[
+				"num",
+				"num_iters"
+			],
+			[
+				"W",
+				"W"
+			],
+			[
+				"MY",
+				"MYSQL_HOST"
+			],
+			[
+				"db_",
+				"db_args"
+			],
+			[
+				"my",
+				"MYSQL_DB"
+			],
+			[
+				"PASS",
+				"MYSQL_PASS"
+			],
+			[
+				"MYS",
+				"MYSQL_USER"
+			],
+			[
+				"M",
+				"MYSQL_PORT"
+			],
+			[
+				"mn",
+				"managerid"
+			],
+			[
+				"pa",
+				"parenCnt"
+			],
+			[
+				"Node",
+				"Node"
+			],
+			[
+				"code",
+				"code"
+			],
+			[
+				"com",
+				"COMMENT3"
+			],
+			[
+				"COMM",
+				"COMMENT2"
+			],
+			[
+				"n",
+				"n"
+			],
+			[
+				"comm",
+				"COMMENT2"
+			],
+			[
+				"nw",
+				"nwpath"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "params.py",
+			"settings":
+			{
+				"buffer_size": 932,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "validation.py",
+			"settings":
+			{
+				"buffer_size": 2822,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lr.py",
+			"settings":
+			{
+				"buffer_size": 2710,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "alpha.py",
+			"settings":
+			{
+				"buffer_size": 1332,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/F/Git_file/data-mining/hw2/data/alpha.txt",
+			"settings":
+			{
+				"buffer_size": 7204,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/F/Git_file/data-mining/hw2/data/validated.txt",
+			"settings":
+			{
+				"buffer_size": 18,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/F/Git_file/machine_learning/machine-learning-ex2/ex2/costFunctionReg.m",
+			"settings":
+			{
+				"buffer_size": 1351,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "main.py",
+			"settings":
+			{
+				"buffer_size": 1756,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "ya",
+		"selected_items":
+		[
+			[
+				"ya",
+				"PyYapf: Format Document"
+			],
+			[
+				"su",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"sub",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"",
+				"SublimeLinter: Report (Open Files)"
+			],
+			[
+				"sublime",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"subl",
+				"SublimeLinter: Enable Debug Mode"
+			],
+			[
+				"subp",
+				"SublimeLinter: Create Linter Plugin"
+			],
+			[
+				"sublimelinter",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"python",
+				"Build With: Python - Syntax Check"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				":W",
+				":w - Save"
+			],
+			[
+				":0",
+				":0 - BOF"
+			],
+			[
+				":o",
+				":$ - EOF"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"mark",
+				"Markdown HTML Preview"
+			],
+			[
+				"m",
+				"Markdown HTML Preview"
+			],
+			[
+				"ma",
+				"Markdown HTML Preview"
+			],
+			[
+				"Snippet: lex ",
+				"Snippet: LEX - helper - date"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"prev",
+				"Markdown Preview: Export HTML in Sublime Text"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"pakage",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"install",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"turtle",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())",
+			"pakage"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/F/Git_file/data-mining/hw2",
+		"/F/Git_file/data-mining/hw2/data",
+		"/F/Git_file/data-mining/hw2/python"
+	],
+	"file_history":
+	[
+		"/F/Git_file/data-mining/hw2/data/validated.txt",
+		"/F/Git_file/data-mining/hw1/matlab/linearRegCostFunction.m",
+		"/F/Git_file/data-mining/hw2/c++/SGD/SGD/main.cpp",
+		"/F/Git_file/data-mining/hw1/python_version/LinearReg.py",
+		"/F/Git_file/data-mining/hw2/python/logistic_reg.py",
+		"/F/Git_file/data-mining/hw1/matlab/learningCurve.m",
+		"/F/Git_file/data-mining/hw2/data/x_train.txt",
+		"/F/Git_file/data-mining/hw2/python/validation.py",
+		"/F/Git_file/data-mining/hw2/data/x_validation.txt",
+		"/F/Git_file/data-mining/hw1/matlab/plotlearningCurve.m",
+		"/F/Git_file/data-mining/hw2/python/main.py",
+		"/F/Git_file/data-mining/hw2/python/params.py",
+		"/C/Users/wqw/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/C/Users/wqw/AppData/Roaming/Sublime Text 3/Packages/User/PyYapf.sublime-settings",
+		"/C/Users/wqw/AppData/Roaming/Sublime Text 3/Packages/PyYapf Python Formatter/PyYapf.sublime-settings",
+		"/C/Users/wqw/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/wqw/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/F/Git_file/data-mining/hw2/python/formatter.bat",
+		"/F/Git_file/data-mining/hw2/python/LogisticReg.py",
+		"/F/Git_file/data-mining/hw2/python/get_validation.py",
+		"/F/Git_file/data-mining/hw1/python_version/main.py",
+		"/F/Git_file/data-mining/hw2/data/little_test.txt",
+		"/F/Git_file/data-mining/hw2/python/LinearReg.py",
+		"/F/Git_file/hexo-blog/source/about/index.md",
+		"/F/Git_file/data-mining/.gitignore",
+		"/F/Git_file/data-mining/hw2/python/param.py",
+		"/F/Git_file/hexo-blog/deploy.bat",
+		"/F/Git_file/hexo-blog/node_modules/hexo-math/README.md",
+		"/F/Git_file/hexo-blog/source/_posts/2016-5-16.hide-article-with-github.md",
+		"/C/Users/wqw/Desktop/2016-5-16.hide-article-with-github.md",
+		"/F/Git_file/whereIsTime/documents/for_team/版本分支控制图.md",
+		"/F/Git_file/hexo-blog/source/_posts/2016-5-6.hexo-blog-on-Github.md",
+		"/F/Git_file/hexo-blog/source/_posts/2016-5-16-hide-article-with-github.md",
+		"/F/Git_file/hexo-blog/source/_posts/2016-5-15.ml-large-scale-classification.md",
+		"/F/Git_file/hexo-blog/_config.yml",
+		"/F/Git_file/hexo-blog/run.bat",
+		"/F/Git_file/whereIsTime/documents/for_team/需求规格说明文档.md",
+		"/F/Git_file/whereIsTime/documents/for_team/项目方案.md",
+		"/F/Git_file/hexo-blog/source/_posts/2016-5-7.ml-linear-regression.md",
+		"/F/Git_file/hexo-blog/source/_posts/2016-5-15.ml-linear-regression.md",
+		"/F/Git_file/hexo-blog/scaffolds/draft.md",
+		"/F/Git_file/hexo-blog/themes/yelee/_config.yml",
+		"/F/Git_file/hexo-blog/themes/yelee/layout/_partial/mathjax.ejs",
+		"/F/Git_file/hexo-blog/themes/yilia/_config.yml",
+		"/F/Git_file/hexo-blog/themes/yelee/layout/_partial/article.ejs",
+		"/F/Git_file/hexo-blog/source/_posts/2016-5-10.large-scale-classification.mdown",
+		"/F/Git_file/hexo-blog/themes/yelee/layout/archive.ejs",
+		"/F/Git_file/whereIsTime/.gitignore",
+		"/F/Git_file/data-mining/hw2/data/train1.txt",
+		"/F/Git_file/data-mining/hw2/predictions/alpha0.01_uprate0.99_iters3_prediction_1463143401.txt",
+		"/F/Git_file/data-mining/hw2/predictions/alpha0.01_uprate0.99_iters3_prediction_1463144179.txt",
+		"/F/Git_file/data-mining/hw2/data/theta.txt",
+		"/F/Git_file/data-mining/hw2/data/lambda.txt",
+		"/F/Git_file/data-mining/hw2/data/cost.txt",
+		"/F/Git_file/data-mining/hw2/data/test.txt",
+		"/F/Git_file/data-mining/hw2/data/train.txt",
+		"/F/Git_file/data-mining/hw2/predictions/alpha0.3_uprate0.8_iters3_prediction_1463056021.txt",
+		"/F/Git_file/data-mining/hw2/c++/SGD/SGD/prediction_1462888387.txt",
+		"/F/software/Armadillo/include/armadillo_bits/config.hpp",
+		"/C/Users/wqw/AppData/Local/Temp/Rar$DIa0.423/README.txt",
+		"/C/Users/wqw/AppData/Local/Temp/Rar$DIa0.658/README.txt",
+		"/F/Git_file/data-mining/hw2/sizes",
+		"/F/Git_file/hexo-blog/themes/yelee/layout/_partial/left-col.ejs",
+		"/F/Git_file/hexo-blog/.gitignore",
+		"/F/Git_file/hexo-blog/themes/yelee/source/css/_partial/article.styl",
+		"/F/Git_file/hexo-blog/source/_posts/2016-5-8.ml-first-lesson.md",
+		"/F/Git_file/hexo-blog/source/_posts/2016-5-6.karaf-first.md",
+		"/C/Users/wqw/Desktop/2016-5-8.ml-first-lession.md",
+		"/F/Git_file/hexo-blog/source/_posts/2016-5-8.ml-first-lession.md",
+		"/F/Git_file/hexo-blog/source/_posts/2016-5-7.hexo-blog-on-Github.md",
+		"/F/Git_file/hexo-blog/themes/yelee/layout/_partial/post/nav.ejs",
+		"/F/Git_file/hexo/source/categories/index.md",
+		"/F/Git_file/hexo/source/_posts/2016-5-7.hexo-blog-on-Github.md",
+		"/F/Git_file/hexo/_config.yml",
+		"/F/Git_file/hexo/.gitignore",
+		"/F/Git_file/hexo/themes/yelee/_config.yml",
+		"/F/Git_file/hexo/scaffolds/post.md",
+		"/F/Git_file/hexo/source/_posts/karaf初战.md",
+		"/F/Git_file/hexo/source/_posts/使用hexo在github上搭建博客.md",
+		"/F/Git_file/hexo/source/_posts/AboutMe.md",
+		"/F/Git_file/hexo/source/tags/index.md",
+		"/F/Git_file/hexo/themes/yelee/layout/_partial/tag-cloud-page.ejs",
+		"/F/Git_file/hexo/themes/yelee/layout/_partial/page.ejs",
+		"/F/Git_file/hexo/themes/yelee/layout/_partial/article.ejs",
+		"/F/Git_file/hexo/source/_posts/AboutMe - 副本.md",
+		"/F/Git_file/hexo/source/about/index.md",
+		"/F/Git_file/hexo/themes/yilia/_config.yml",
+		"/F/Git_file/hexo/themes/next/_config.yml",
+		"/F/Git_file/hexo/themes/hexo-theme-yilia/_config.yml",
+		"/C/Users/wqw/Documents/WeChat Files/DingCaoEr/Attachment/新建文本文档.txt",
+		"/F/Git_file/hexo/source/catagories/index.md",
+		"/F/Git_file/hexo/source/_posts/hello-world.md",
+		"/F/Git_file/hexo/source/_posts/AboutMe.txt",
+		"/F/Git_file/hexo/public/2016/05/05/hello-world/index.html",
+		"/C/Users/wqw/Desktop/ZYT.m",
+		"/F/Git_file/web2.0_experiments/end-term design/static/data/app_secretfriends.sql",
+		"/F/个人资料/大三下/功课/数据库/小实验/SQL集合.sql",
+		"/C/Users/wqw/Documents/Visual Studio 2013/Projects/homework_debug/homework_debug/output.txt",
+		"/F/个人资料/personal/电子书/Only Sense Online/Only Sense Online 1.epub",
+		"/C/Users/wqw/Downloads/README.md",
+		"/C/Users/wqw/Desktop/华为手机助手2016-04-29_215305015.csv",
+		"/F/个人资料/大三下/功课/3D游戏设计/week3/Assets/Scripts/BaseCode.cs",
+		"/F/个人资料/大三下/功课/3D游戏设计/week6/参考/CodeBase.cs",
+		"/C/Users/wqw/Documents/CrossAndCircle/Assets/Scripts/GlobalManager.cs",
+		"/F/Git_file/web2.0_experiments/end-term design/index.wsgi",
+		"/F/个人资料/大三下/课外/tcv3d/tcv3dPluginInfo.h",
+		"/F/个人资料/大三下/课外/tcv3d/CMakeFiles/Makefile.cmake",
+		"/C/Users/wqw/Desktop/作业部落.css",
+		"/F/个人资料/大三下/功课/系统分析与设计/week5/淘宝退货业务流程.uxf",
+		"/F/svn/secretfriends/1/static/data/app_secretfriends.sql",
+		"/F/Git_file/data-mining/hw1/python_version/data/best_theta",
+		"/F/个人资料/大三下/功课/数据库/小实验/13331087(黄俊杰) 数据库(小)实验.md",
+		"/C/Users/wqw/Desktop/sicily_1484-守望者的逃离.md",
+		"/C/Users/wqw/Desktop/sicily_1007-To-and-Fro.md",
+		"/C/Users/wqw/AppData/Local/Temp/Rar$DIa0.423/sicily_1484-守望者的逃离.md",
+		"/C/Users/wqw/Desktop/基础词汇500.md",
+		"/F/Git_file/data-mining/hw1/python_version/data/predict_py_150000.csv",
+		"/F/Git_file/data-mining/hw1/python_version/data/predict_py_10000.csv",
+		"/F/Git_file/data-mining/hw1/python_version/data/predict_py_10000.txt",
+		"/F/Git_file/data-mining/hw1/python_version/data/Ztrain.txt",
+		"/F/Git_file/data-mining/hw1/python_version/data/train.csv",
+		"/F/Git_file/EnDeCoder/src/index.wsgi",
+		"/F/software/numpy-1.11.0rc2/INSTALL.rst.txt",
+		"/F/Git_file/thymeleafexamples-stsm/.idea/modules.xml",
+		"/F/Git_file/thymeleafexamples-stsm/.idea/misc.xml",
+		"/F/Git_file/thymeleafexamples-stsm/.idea/vcs.xml",
+		"/F/个人资料/大三下/功课/3D游戏设计/week4/参考_罗俊杰/UserInterface.cs",
+		"/F/个人资料/大三下/功课/3D游戏设计/week4/参考_罗俊杰/BaseCode.cs"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"logistic_reg",
+			"log",
+			"log(",
+			"np.",
+			", end=''",
+			"end='')",
+			"print(",
+			"print\\((w*)\\)",
+			"print(",
+			"print(*)",
+			"y",
+			"alambda",
+			"\\$(*)\\$",
+			"$(*)$",
+			"plugins",
+			"plu",
+			"mathjax",
+			"线性回归",
+			"\\t",
+			"email",
+			"menu",
+			"github",
+			"header",
+			"head",
+			"rss",
+			"Global.",
+			"handlers.",
+			".",
+			"-",
+			".",
+			"-",
+			".",
+			"-",
+			".",
+			"-",
+			".",
+			"-",
+			"np.",
+			"dot",
+			"_mysql",
+			"db ",
+			"db.",
+			"db ",
+			"da_args",
+			"db_args",
+			",",
+			";",
+			"txt",
+			"text",
+			"a-zA-Z",
+			"A-z",
+			"bilibili",
+			";",
+			") {",
+			"} else if ($('#code-type').val() ==",
+			"$('#secrettext').val()",
+			"alphabet",
+			"\\}\\n  ",
+			"\\}\\n",
+			"thisNode->type = (.*);",
+			"snprintf\\(thisNode->type, 10, \"(.*)\"\\);",
+			"const *",
+			"sizeof(Node)",
+			"Node*",
+			"Node const *",
+			"Node*",
+			"Node",
+			"Ntype",
+			"Node",
+			"\\{(.*)\\}",
+			"char",
+			"(%s)\",ori);",
+			"snprintf(ans, len, ",
+			"char",
+			"char* ",
+			"\"(\\S+)\" (\\S+)",
+			"\"(\\S+)\" \\S+",
+			"    ",
+			"static_url('js/",
+			"group",
+			"'(\\S)': \"(\\S+)\"",
+			"Morse",
+			"// printf(\"%s\\n\", yytext);",
+			"printf",
+			"printf(",
+			"text",
+			"string",
+			"'(\\S)':'(\\S)'",
+			": ",
+			"printf\\(\\\"(\\S*) \\\"\\);",
+			"printf\\(\\\"(\\S*:) \\\"\\);",
+			"=\n",
+			"\\}",
+			"  ",
+			"`",
+			"（对）",
+			"。对",
+			"对",
+			"√",
+			"错",
+			"Ｅ",
+			"Ｄ",
+			"Ｃ",
+			"Ｂ",
+			"Ａ",
+			"([ＡＢＣＤＥ])",
+			"[ＡＢＣＤＥ]",
+			"も",
+			"$",
+			"  ",
+			"$",
+			"  ",
+			"begin",
+			"end",
+			"  ",
+			"ignore",
+			"\\)",
+			"\\(",
+			"(",
+			"\\t",
+			"trim",
+			"trial"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"lr",
+			"",
+			"end='' ",
+			"print ",
+			"label",
+			"a_lambda",
+			"{% math %} (1) {% endmath %}",
+			"|",
+			"",
+			"-",
+			"~",
+			"-",
+			"~",
+			"-",
+			"~",
+			"-",
+			"~",
+			"-",
+			"~",
+			"",
+			"np.dot",
+			"MySQLdb",
+			"Global.db ",
+			"Global.db",
+			"Global.db.",
+			"Global.db ",
+			"db_args",
+			"Global.db_args",
+			"Global.da_args",
+			"\\t",
+			"cde",
+			"code",
+			"A-Za-z",
+			"A-Z",
+			"Alphabet",
+			"} ",
+			"printf(\"\\1(\");",
+			"thisNode->type = \\1;",
+			"*",
+			"sizeof(struct Node)",
+			"struct Node*",
+			"struct Node const *",
+			"struct Node*",
+			"struct Node",
+			"nType",
+			"{ \\1 }",
+			"Node",
+			"\";",
+			"thisNode->type = ",
+			"Node",
+			"Node* ",
+			"\\2 \"\\1\"",
+			"\\2 \\1",
+			" ",
+			"static_url('js/encryptions/",
+			"\"\\2\": '\\1'",
+			"\\2: \\1",
+			"IME",
+			"printf(\"%s\\n\", yytext);",
+			"// printf",
+			"// printf(",
+			"code",
+			"text",
+			"'\\2':'\\1'",
+			":",
+			"// printf(\"\\1 \");",
+			"}\\n",
+			"\\t",
+			"'",
+			"（√）",
+			"。√",
+			"t",
+			"√",
+			"T",
+			"X",
+			"E",
+			"D",
+			"C",
+			"B",
+			"A",
+			"\\1",
+			"||",
+			"|",
+			"||",
+			"|",
+			"beginning",
+			"tail",
+			"#",
+			"]",
+			"[",
+			"  "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "params.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 932,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								418,
+								418
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "validation.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2822,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2822
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 60.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lr.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2710,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 855.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "alpha.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1332,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								107,
+								107
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/F/Git_file/data-mining/hw2/data/alpha.txt",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 7204,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1247,
+								1247
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/F/Git_file/data-mining/hw2/data/validated.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18,
+								18
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/F/Git_file/machine_learning/machine-learning-ex2/ex2/costFunctionReg.m",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1351,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1067,
+								1067
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Matlab/Matlab.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "main.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1756,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								971,
+								971
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "large-scale-classification.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 584.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": false,
+	"side_bar_visible": true,
+	"side_bar_width": 253.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
