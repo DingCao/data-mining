@@ -57,3 +57,10 @@ armadillo*
 OpenBLAS*
 data*
 SGD*
+*.pyc
+*.sublime-project
+hw2/python/large-scale-classification.sublime-workspace
+hw2/python/formatter.bat
+hw2/python/.idea/dictionaries/DC.xml
+*.xml
+.idea/
