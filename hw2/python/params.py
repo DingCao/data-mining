@@ -8,7 +8,7 @@ Copyright (c) huangjj27@SYSU (SNO: 13331087). ALL RIGHTS RESERVERD.
 M_PARAM_TRAIN = 1000
 M_PARAM_VALIDATE = 1000
 N_FEATURE = 11392
-BATCH = 100
+BATCH = 1000
 
 # the number of samples used for trains and predictions.
 M_TRAIN = 2177020
@@ -18,14 +18,14 @@ N_FEATURE = 11392
 # intial params
 ALPHA = 3e-2
 ALPHAS = [3e-2, 1e-2, 3e-2, 1e-3, 3e-4, 1e-4, 3e-5, 1e-5, 3e-6, 1e-6]
-UPDATE_RATE = 0.99
+UPDATE_RATE = 0.97
 LAMBDA = 0
 LAMBDAS = [10, 3, 1, 0.3, 0.1, 0.03, 0.01, 0.003, 0.001, 0]
 
 CURVE_POINTS = 1000
 PRINT_EACH = 100
 
-SPAN = 100
+SPAN = 1
 ITERS = 100
 
 # some useful file name

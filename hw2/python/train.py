@@ -19,6 +19,7 @@ from params import N_FEATURE
 from params import BATCH
 
 from params import ALPHA
+from params import UPDATE_RATE
 from params import ITERS
 from params import SPAN
 from params import BATCH
@@ -30,18 +31,20 @@ from lr import lr_cost
 
 
 def main():
-    print "Loading data..."
+    print "training data..."
     train_file = open(params.TRAIN_FILE, 'r')
 
     flag = 1
-
     outer = 1
     theta = np.zeros((N_FEATURE + 1, 1))
+    costs = []
+    alpha = ALPHA
     while flag:
-        X_train = np.zeros((M_PARAM_TRAIN, N_FEATURE))
-        y_train = np.zeros((M_PARAM_TRAIN, 1))
-        costs = []
-        for i in range(M_PARAM_TRAIN):
+        X_train = np.zeros((BATCH, N_FEATURE))
+        y_train = np.zeros((BATCH, 1))
+        cost = 0.0
+
+        for i in range(BATCH):
             a_line = train_file.readline().strip()
             if a_line != "":
                 a_line = a_line.split(' ')  # seperate the data
@@ -57,19 +60,22 @@ def main():
                 flag = 0
 
         if flag:
-            [cost, theta] = train_lr_gd('logistic', X_train, y_train, ALPHA,
-                                        LAMBDA, ITERS, SPAN, BATCH)
+            [cost, grad] = lr_cost('logistic', X_train, y_train, theta)
+            theta = theta - alpha*grad
+            alpa = alpha * UPDATE_RATE
+
+        if outer > 1000: flag = 0
+        if outer % SPAN == 0:
             costs.append(cost)
+            sys.stdout.write('processing: %6d, cost: %f\r' % (outer, cost))
 
-        # if outer > 1: flag = 0
-
-        print 'processing: %d' % outer
         outer += 1
+    print ''
 
     costs = np.transpose(costs)
     np.savetxt(params.COST_FILE, costs)
-    theta_name = 'F:/Git_file/data-mining/hw2/theta/theta_alpha%.2f_lambda%.2f_batch%d_%s.txt' % (
-        ALPHA, LAMBDA, BATCH,
+    theta_name = 'F:/Git_file/data-mining/hw2/theta/theta_alpha%.2f_update%f_lambda%.2f_batch%d_%s.txt' % (
+        ALPHA, UPDATE_RATE, LAMBDA, BATCH,
         time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime()))
     np.savetxt(theta_name, theta)
 
@@ -79,8 +85,8 @@ def main():
 
     print "predicting..."
     test_file = open(params.TEST_FILE, 'r')
-    prediction_name = 'F:/Git_file/data-mining/hw2/predictions/predict_alpha%.2f_lambda%.2f_batch%d_%s.txt' % (
-        ALPHA, LAMBDA, BATCH, time.strftime("%Y-%m-%d_%H-%M-%S",
+    prediction_name = 'F:/Git_file/data-mining/hw2/predictions/predict_alpha%.2f_update%f_lambda%.2f_batch%d_%s.txt' % (
+        ALPHA, UPDATE_RATE, LAMBDA, BATCH, time.strftime("%Y-%m-%d_%H-%M-%S",
                                             time.localtime()))
     predict_file=open(prediction_name, 'w')
 
