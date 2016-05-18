@@ -59,10 +59,10 @@ cost = {
 
 
 def lr_cost(lrtype, X, label, theta, a_lambda=0):
-    """calculate the cost of a logistic regression model
+    """calculate the cost of a lr model
 
     Args:
-        lrtype: the type of regression.linear or logistic
+        lrtype: the type of lr regression.linear or logistic
         X: the samples' feature matrix
         label: the samples' label vector
         theta: the weights of X
@@ -100,12 +100,41 @@ def lr_cost(lrtype, X, label, theta, a_lambda=0):
     return [J[0, 0], grad]
 
 
-def train_lr_gd(lrtype, X_train, label, alpha, a_lambda, iters):
+def train_lr_gd(lrtype, X_train, label, alpha, a_lambda=0, iters=200, span=1):
+    """train a lr model with gradient descenting
+
+    Args:
+        lrtype: the type of lr regression.linear or logistic
+        X: the samples' feature matrix
+        label: the samples' label vector
+        theta: the weights of X
+        a_lambda: regularation parameter
+        span: each span write a data
+
+    Returns:
+        cost: the cost list of each iters
+        grad: the gradient of theta
+
+    """
+    cost = []
+    theta = zeros((X_train.shape[1]+1, 1))
+
+    for iter in range(1, iters + 1):
+        [J, grad] = lr_cost(lrtype, X_train, label, theta, a_lambda)
+        theta = theta - alpha * grad  # gradient descenting
+
+        if iter % span == 0 or iter == iters:
+            cost.append(J)
+            sys.stdout.write('iter: %4d/%4d, cost: %f\r' % (iter, iters, J))
+
+    print ''
+
+    return [cost, theta]
+
+def train_lr_mbgd(lrtype, X_train, label, alpha, a_lambda, iters, batch):
     """ """
     cost = []
-    theta = zeros((X_train.shape[1], 1))
-    theta = vstack([0, theta])
-    # print theta.shape
+    theta = zeros((X_train.shape[1]+1, 1))
 
     for iter in range(1, iters + 1):
         [J, grad] = lr_cost(lrtype, X_train, label, theta, a_lambda)
@@ -118,4 +147,3 @@ def train_lr_gd(lrtype, X_train, label, alpha, a_lambda, iters):
     print ''
 
     return [cost, theta]
-

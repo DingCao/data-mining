@@ -1,7 +1,7 @@
 #!/usr/bin/python2
 """module get_validation
 
-generate data sets used for cross-validation
+do a cross-validation with the datasets
 
 """
 import params
@@ -47,7 +47,6 @@ def main():
     """  """
     train_file = open(params.X_TRAIN_FILE, 'r')
     validation_file = open(params.X_VALIDATION_FILE, 'r')
-    validated_file = open(params.VALIDATED_FILE, "w")
 
     X_train = np.zeros((M_PARAM_TRAIN, N_FEATURE))
     y_train = np.zeros((M_PARAM_TRAIN, 1))
@@ -83,14 +82,9 @@ def main():
     errors = validate(X_train, y_train, X_val, y_val,
                                         ALPHA_INIT, LAMBDA, params.ITERS,
                                         params.SPAN)
-    np.transpose(errors)
 
-    for error in errors:
-        for a_error in error:
-            validated_file.write('%f ' % a_error)
-        validated_file.write('\n')
-
-    validated_file.close()
+    errors = np.transpose(errors)
+    np.savetxt(params.VALIDATED_FILE, errors)
 
 
 if __name__ == '__main__':

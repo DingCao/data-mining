@@ -42,11 +42,13 @@ def main():
     costs = []
     for alpha in ALPHAS:
         print 'alpha: %e' % alpha
-        [cost, theta] = train_lr_gd('logistic', X_train, y_train, alpha, LAMBDA, ITERS)
+        [cost, theta] = train_lr_gd('logistic', X_train, y_train, alpha,
+                                    LAMBDA, ITERS)
         costs.append(cost)
 
-    #np.transpose(costs)
-    np.savetxt(prams.ALPHA_FILE, costs)
+    costs = np.transpose(costs)
+    np.savetxt(params.ALPHA_FILE, costs)
+
 
 if __name__ == '__main__':
     main()

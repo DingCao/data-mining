@@ -1,8 +1,8 @@
 function plotValidation()
 Z = dlmread("data/validated.txt");
 
-Y = Z(2, :);
-X = Z(1, :);
+error_train = Z(:, 1);
+error_val = Z(:, 2);
 
 figure
 xlabel("m*100");
