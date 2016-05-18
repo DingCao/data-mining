@@ -4,9 +4,9 @@ Copyright (c) huangjj27@SYSU (SNO: 13331087). ALL RIGHTS RESERVERD.
 
 """
 #!/usr/bin/python2
-# from os import *
+from os import *
 from numpy import *
-from LinearReg import *
+from lr import train_lr_gd
 
 def main():
     print "Loading data..."
@@ -27,7 +27,7 @@ def main():
 
     alambda = 0.0
     alpha = 0.03
-    num_iters = 10000
+    num_iters = 200
     span = 5
 
     print "Done!"
@@ -41,8 +41,8 @@ def main():
     print "Done!"
 
     # training
-    [theta, J] = GradientDescenting(Ztrain, ytrain, theta, alambda, alpha,
-                                    num_iters, span)
+    [J, theta] = train_lr_gd('logistic', Ztrain, ytrain, theta, alpha, alambda,
+                                    num_iters)
     savetxt("data/theta_py_iter_150k.txt", theta)
     print "theta saved."
 

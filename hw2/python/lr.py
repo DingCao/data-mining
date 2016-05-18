@@ -17,7 +17,7 @@ from numpy import exp
 # from os import system
 
 def sigmoid(z):
-    return 1 / (1 + exp(z))
+    return 1 / (1 + exp(-z))
 
 
 def hyphothesis_logistic(X, theta, m):
