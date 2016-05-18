@@ -1,9 +1,9 @@
-#!/usr/bin/python2
 """module alpha
 
 chooses the best alpha
 
 """
+# !/usr/bin/python2
 from os import system
 
 import numpy as np
@@ -22,7 +22,6 @@ from lr import train_lr_gd
 def main():
     """  """
     train_file = open(params.X_TRAIN_FILE, 'r')
-    #alpha_file = open(params.ALPHA_FILE, "w")
 
     X_train = np.zeros((M_PARAM_TRAIN, N_FEATURE))
     y_train = np.zeros((M_PARAM_TRAIN, 1))
