@@ -1,11 +1,11 @@
 function plotValidation()
 Z = dlmread("data/validated.txt");
 
-Y = Z(:, 2);
-X = Z(:, 1);
+Y = Z(2, :);
+X = Z(1, :);
 
 figure
-xlabel("m");
+xlabel("m*100");
 ylabel("Cost");
 
 hold on;
