@@ -1,22 +1,18 @@
 from os import *
 from numpy import *
-from LinearReg import *
+import lr
+import params
 
 def main():
     print("Loading data...", end='')
     m = 25000
     n = 384
-    XandYtrain = genfromtxt('data/train.csv',delimiter=',', dtype='float', skip_header=True)
+    XandYtrain = genfromtxt(params.TRAIN_FILE, delimiter=',', dtype='float', skip_header=True)
     Xtrain = XandYtrain[:,1:(n+1)]
     ytrain = XandYtrain[:, (n+1)].reshape(m, 1)
 
-    XtestWithID = genfromtxt('data/test.csv',delimiter=',', dtype='float', skip_header=True)
+    XtestWithID = genfromtxt(params.TEST_FILE, delimiter=',', dtype='float', skip_header=True)
     Xtest = XtestWithID[:, 1:(n+1)]
-
-    alambda = 0.0
-    alpha = 0.03
-    num_iters = 10000
-    span = 5
 
     print("Done!")
 
