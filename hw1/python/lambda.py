@@ -24,38 +24,21 @@ from lr import lr_cost
 
 def main():
     """  """
-    train_file = open(params.X_TRAIN_FILE, 'r')
-    validation_file = open(params.X_VALIDATION_FILE, 'r')
+    print 'loading data...'
+    XandYtrain = np.genfromtxt(params.X_TRAIN_FILE,
+                               delimiter=',',
+                               dtype='float',
+                               skip_header=True)
+    X_train = XandYtrain[:, 1:(params.N_FEATURE + 1)]
+    y_train = XandYtrain[:, (params.N_FEATURE + 1)].reshape(params.M_PARAM_TRAIN, 1)
 
-    X_train = np.zeros((M_PARAM_TRAIN, N_FEATURE))
-    y_train = np.zeros((M_PARAM_TRAIN, 1))
-    for i in range(M_PARAM_TRAIN):
-        a_line = train_file.readline().strip()
-        a_line = a_line.split(' ')  # seperate the data
-
-        # get the label
-        y_train[i] = int(a_line[0])
-        a_line.pop(0)  # throw the label away
-
-        for pair in a_line:
-            pair = pair.split(':')
-            X_train[i, int(pair[0]) - 1] = float(pair[1])
-    train_file.close()
-
-    X_val = np.zeros((M_PARAM_VALIDATE, N_FEATURE))
-    y_val = np.zeros((M_PARAM_VALIDATE, 1))
-    for i in range(M_PARAM_VALIDATE):
-        a_line = validation_file.readline().strip()
-        a_line = a_line.split(' ')  # seperate the data
-
-        # get the label
-        y_val[i] = int(a_line[0])
-        a_line.pop(0)  # throw the label away
-
-        for pair in a_line:
-            pair = pair.split(':')
-            X_val[i, int(pair[0]) - 1] = float(pair[1])
-    validation_file.close()
+    XandY_val = np.genfromtxt(params.X_TRAIN_FILE,
+                              delimiter=',',
+                              dtype='float',
+                              skip_header=True)
+    X_val = XandY_val[:, 1:(params.N_FEATURE + 1)]
+    y_val = XandY_val[:, (params.N_FEATURE + 1)].reshape(params.M_PARAM_VALIDATE, 1)
+    print "Done!"
 
     error_train = []
     error_val = []

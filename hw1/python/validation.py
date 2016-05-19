@@ -69,7 +69,7 @@ def main():
                       SPAN_OUTER)
 
     errors = np.transpose(errors)
-    np.savetxt(VALIDATED_FILE, errors)
+    np.savetxt(params.VALIDATED_FILE, errors)
     print 'validation done!'
 
 if __name__ == '__main__':
