@@ -30,7 +30,7 @@ def validate(X_train, y_train, X_val, y_val, alpha, a_lambda, iters, span):
 
         [cost, theta] = train_lr_gd('logistic', X_train[0:(i * span), :],
                                     y_train[0:(i * span), :], alpha, a_lambda,
-                                    iters, span, params.BATCH)
+                                    iters, params.SPAN)
         [cost_trained, grad] = lr_cost('logistic', X_train[0:(i * span), :],
                                        y_train[0:(i * span), :], theta)
         error_train.append(cost_trained)
@@ -81,7 +81,7 @@ def main():
     validation_file.close()
 
     errors = validate(X_train, y_train, X_val, y_val, ALPHA, LAMBDA,
-                      params.ITERS, params.SPAN)
+                      params.ITERS, params.SPAN_OUTER)
 
     errors = np.transpose(errors)
     np.savetxt(params.VALIDATED_FILE, errors)

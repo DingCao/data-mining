@@ -20,23 +20,27 @@ def sigmoid(z):
     return 1 / (1 + exp(-z))
 
 
-def hyphothesis_logistic(X, theta, m):
-    hyphothesis = sigmoid(dot(X, theta))
-    if m == 1:
-        hyphothesis = hyphothesis[0, 0]
+def hypho(lrtype, X, theta, m):
+    """computes hyphothesis for logistic regression or linear regression
 
-    return hyphothesis
+    Args:
+        lrtype: decides to use which regression. dafault is the linear one
+        X:  the samples matrix to predict. a sample each row
+        theta: the weights for X
+        m: the number of samples
 
-
-def hyphothesis_linear(X, theta, m):
+    Returns:
+        hyphothesis: the prediction vector for X
+    """
     hyphothesis = dot(X, theta)
+
+    if lrtype == 'logistic':
+        hyphothesis = sigmoid(hyphothesis)
+
     if m == 1:
         hyphothesis = hyphothesis[0, 0]
 
     return hyphothesis
-
-
-hypho = {"logistic": hyphothesis_logistic, "linear": hyphothesis_linear}
 
 
 def cost_linear(h, label, m):
@@ -45,6 +49,13 @@ def cost_linear(h, label, m):
 
 
 def cost_logistic(h, label, m):
+    """
+    computes loss for logistic regression betwen given prediction vector h
+    and lalbel vector with their size m. make sure their sizes are the same!
+
+    Returns:
+        a_cost:
+    """
     a_cost = (-1.0 / m) * (dot(label.T, log(h)) + dot(
         (1 - label).T, log(1 - h)))
     return a_cost[0, 0]
@@ -74,7 +85,7 @@ def lr_cost(lrtype, X, label, theta, a_lambda=0):
     X = hstack([ones((m, 1)), X])  # NOTE: X matrix is without bias
 
     # computes
-    h = hypho[lrtype](X, theta, m)  # the hyphothesis vector
+    h = hypho(lrtype, X, theta, m)  # the hyphothesis vector
     J = cost[lrtype](h, label, m)  # the loss between labels and hyphothesis
     grad = (1.0 / m) * dot(X.T, (h - label))  # the grad for theta
 

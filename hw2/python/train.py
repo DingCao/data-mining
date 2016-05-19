@@ -39,10 +39,11 @@ def main():
     theta = np.zeros((N_FEATURE + 1, 1))
     costs = []
     alpha = ALPHA
+    cost = 0.0
+
     while flag:
         X_train = np.zeros((BATCH, N_FEATURE))
         y_train = np.zeros((BATCH, 1))
-        cost = 0.0
 
         for i in range(BATCH):
             a_line = train_file.readline().strip()
@@ -61,20 +62,22 @@ def main():
 
         if flag:
             [cost, grad] = lr_cost('logistic', X_train, y_train, theta)
-            theta = theta - alpha*grad
-            alpa = alpha * UPDATE_RATE
+            theta = theta - alpha * grad
+            # costs.append(cost)
 
-        if outer > 1000: flag = 0
+        # if outer > 100: flag = 0
         if outer % SPAN == 0:
+            alpha = alpha * UPDATE_RATE
             costs.append(cost)
-            sys.stdout.write('processing: %6d, cost: %f\r' % (outer, cost))
+            sys.stdout.write('processing: %6d, cost: %f, alpha: %.3e\r' % (
+                outer, cost, alpha))
 
         outer += 1
     print ''
 
     costs = np.transpose(costs)
     np.savetxt(params.COST_FILE, costs)
-    theta_name = 'F:/Git_file/data-mining/hw2/theta/theta_alpha%.2f_update%f_lambda%.2f_batch%d_%s.txt' % (
+    theta_name = 'F:/Git_file/data-mining/hw2/theta/theta_alpha%.2f_update%.2f_lambda%.2f_batch%d_%s.txt' % (
         ALPHA, UPDATE_RATE, LAMBDA, BATCH,
         time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime()))
     np.savetxt(theta_name, theta)
@@ -83,38 +86,43 @@ def main():
 
     # predicting
 
-    print "predicting..."
-    test_file = open(params.TEST_FILE, 'r')
-    prediction_name = 'F:/Git_file/data-mining/hw2/predictions/predict_alpha%.2f_update%f_lambda%.2f_batch%d_%s.txt' % (
-        ALPHA, UPDATE_RATE, LAMBDA, BATCH, time.strftime("%Y-%m-%d_%H-%M-%S",
-                                            time.localtime()))
-    predict_file=open(prediction_name, 'w')
+    # print "predicting..."
+    # test_file = open(params.TEST_FILE, 'r')
+    # prediction_name = 'F:/Git_file/data-mining/hw2/predictions/predict_alpha%.2f_update%.2f_lambda%.2f_batch%d_%s.txt' % (
+    #     ALPHA, UPDATE_RATE, LAMBDA, BATCH, time.strftime("%Y-%m-%d_%H-%M-%S",
+    #                                                      time.localtime()))
+    # predict_file = open(prediction_name, 'w')
 
-    X = np.zeros((1, N_FEATURE+1))
-    predict_file.write('id,label\n')
+    # X = np.zeros((1, N_FEATURE + 1))
+    # predict_file.write('id,label\n')
 
-    for i in range(M_TEST):
-        a_line = test_file.readline().strip()
-        if a_line != "":
-            a_line = a_line.split(' ')  # seperate the data
+    # for i in range(M_TEST + 1):
+    #     a_line = test_file.readline().strip()
+    #     if a_line != "":
+    #         a_line = a_line.split(' ')  # seperate the data
 
-            # get the label
-            id_test = int(a_line[0])
-            a_line.pop(0)  # throw the label away
+    #         # get the label
+    #         id_test = int(a_line[0])
+    #         a_line.pop(0)  # throw the label away
 
-            for pair in a_line:
-                pair = pair.split(':')
-                X[0, int(pair[0])] = float(pair[1])
+    #         for pair in a_line:
+    #             pair = pair.split(':')
+    #             X[0, int(pair[0])] = float(pair[1])
 
-            h = lr.sigmoid(np.dot(X, theta))
+    #         h = lr.sigmoid(np.dot(X, theta))
+    #         hypho = 0
+    #         if h > 0.5:
+    #             hypho = 1
+    #         else:
+    #             hypho = 0
 
-            sys.stdout.write('predicting....%4d/%4d\r' % (i, M_TEST))
-            predict_file.write('%d,%d\n' % (id_test, h >= 0.5))
+    #         sys.stdout.write('predicting....%6d/%6d\r' % (i, M_TEST))
+    #         predict_file.write('%d,%d\n' % (id_test, hypho))
 
-    test_file.close()
-    predict_file.close()
+    # test_file.close()
+    # predict_file.close()
 
-    print "\nprediction saved."
+    # print "\nprediction saved."
 
 
 if __name__ == '__main__':

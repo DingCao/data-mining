@@ -5,10 +5,10 @@ Copyright (c) huangjj27@SYSU (SNO: 13331087). ALL RIGHTS RESERVERD.
 """
 
 # the number of samples used for chosing param and do the cross validation.
-M_PARAM_TRAIN = 1000
-M_PARAM_VALIDATE = 1000
+M_PARAM_TRAIN = 10000
+M_PARAM_VALIDATE = 10000
 N_FEATURE = 11392
-BATCH = 1000
+BATCH = 1000    # how many sample to used in a mini-batch gd iteration
 
 # the number of samples used for trains and predictions.
 M_TRAIN = 2177020
@@ -25,8 +25,9 @@ LAMBDAS = [10, 3, 1, 0.3, 0.1, 0.03, 0.01, 0.003, 0.001, 0]
 CURVE_POINTS = 1000
 PRINT_EACH = 100
 
-SPAN = 1
-ITERS = 100
+SPAN = 10
+SPAN_OUTER = 100
+ITERS = 200
 
 # some useful file name
 TRAIN_FILE = "F:/Git_file/data-mining/hw2/data/train.txt"
@@ -37,3 +38,4 @@ ALPHA_FILE = "F:/Git_file/data-mining/hw2/data/alpha.txt"
 COST_FILE = "F:/Git_file/data-mining/hw2/data/cost.txt"
 LAMBDA_FILE = "F:/Git_file/data-mining/hw2/data/lambda.txt"
 TEST_FILE = "F:/Git_file/data-mining/hw2/data/test.txt"
+PCA_FILE = "F:/Git_file/data-mining/hw2/data/pca.txt"
