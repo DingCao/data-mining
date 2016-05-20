@@ -28,6 +28,12 @@ PRINT_EACH = 100
 SPAN = 100
 SPAN_OUTER = 100
 ITERS = 400
+SPAN_TRAIN = 1000
+ITERS_TRAIN = 32000
+
+# show if a train converged enough.
+CONVERGED = 1e-4
+CONVERGED_COUNT = 50
 
 # some useful file name
 TRAIN_FILE = "F:/Git_file/data-mining/hw1/data/train.csv"

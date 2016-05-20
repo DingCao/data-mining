@@ -30,14 +30,14 @@ def main():
 
     # training
     [J, theta] = train_lr_gd('linear', Xtrain, ytrain, params.ALPHA,
-                             params.LAMBDA, params.ITERS, params.SPAN)
+                             params.LAMBDA, params.ITERS_TRAIN, params.SPAN)
     savetxt(params.COST_FILE, J)
 
     # predicting
     print "predicting..."
-    savetxt(params.PRDICTION_FILE,
-            hstack([arange(m).reshape((m, 1)), dot(
-                hstack([ones((m, 1)), Ztest]), theta)]),
+    savetxt(params.PREDICTION_FILE,
+            hstack([arange(params.M_TEST).reshape((params.M_TEST, 1)), dot(
+                hstack([ones((params.M_TEST, 1)), Xtest]), theta)]),
             delimiter=',',
             header='id,reference',
             comments='',

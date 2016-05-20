@@ -8,12 +8,15 @@ import sys
 from numpy import dot
 from numpy import exp
 from numpy import hstack
-from numpy import log
+from numpy.linalg import log
 from numpy import ones
 from numpy import vstack
 from numpy import zeros
 
 from random import randint
+
+from params import CONVERGED
+from params import CONVERGED_COUNT
 
 
 def sigmoid(z):
@@ -107,7 +110,7 @@ def train_lr_gd(lrtype,
     """train a lr model with gradient descenting
 
     Args:
-        batch: subset of the samples
+        batch: subset size of the samples
         alpha: learning rate
         iters: times for training
         X_train: sample matrix
@@ -123,16 +126,16 @@ def train_lr_gd(lrtype,
     """
 
     # get the shape of sample matrix
-    m = X_train.shape[0]
-    n = X_train.shape[1]
+    m, n = X_train.shape[0]
 
     theta = zeros((X_train.shape[1] + 1, 1))
 
     cost_list = []
+    last_cost = 0
+    break_count = 0
     for i in range(1, iters + 1):
         if 0 < batch <= m / 2:
-            choosen = randint(0,
-                              m / batch - 1)  # choose a batch from the X_train
+            choosen = randint(0, m / batch - 1)  # choose a batch from X_train
             X_batch = X_train[choosen:choosen + batch]
             y_batch = label[choosen:choosen + batch]
             [J, grad] = lr_cost(lrtype, X_batch, y_batch, theta, a_lambda)
@@ -140,6 +143,16 @@ def train_lr_gd(lrtype,
             [J, grad] = lr_cost(lrtype, X_train, label, theta, a_lambda)
 
         theta = theta - alpha * grad  # gradient descenting
+
+        if abs(last_cost - J) < CONVERGED:
+            break_count += 1
+        else:
+            break_count = 0
+
+        if break_count >= CONVERGED_COUNT:
+            break
+
+        last_cost = J
 
         if i % span == 0 or i == iters:
             cost_list.append(J)

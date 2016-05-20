@@ -5,7 +5,7 @@ error_train = Z(:, 1);
 error_val = Z(:, 2);
 
 figure
-xlabel("lambda");
+xlabel("lambda No.");
 ylabel("Cost");
 
 hold on;
