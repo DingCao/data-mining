@@ -8,7 +8,7 @@ import sys
 from numpy import dot
 from numpy import exp
 from numpy import hstack
-from numpy.linalg import log
+from numpy import log
 from numpy import ones
 from numpy import vstack
 from numpy import zeros
@@ -126,7 +126,7 @@ def train_lr_gd(lrtype,
     """
 
     # get the shape of sample matrix
-    m, n = X_train.shape[0]
+    m, n = X_train.shape
 
     theta = zeros((X_train.shape[1] + 1, 1))
 

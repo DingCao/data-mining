@@ -86,43 +86,43 @@ def main():
 
     # predicting
 
-    # print "predicting..."
-    # test_file = open(params.TEST_FILE, 'r')
-    # prediction_name = 'F:/Git_file/data-mining/hw2/predictions/predict_alpha%.2f_update%.2f_lambda%.2f_batch%d_%s.txt' % (
-    #     ALPHA, UPDATE_RATE, LAMBDA, BATCH, time.strftime("%Y-%m-%d_%H-%M-%S",
-    #                                                      time.localtime()))
-    # predict_file = open(prediction_name, 'w')
+    print "predicting..."
+    test_file = open(params.TEST_FILE, 'r')
+    prediction_name = 'F:/Git_file/data-mining/hw2/predictions/predict_alpha%.2f_update%.2f_lambda%.2f_batch%d_%s.txt' % (
+        ALPHA, UPDATE_RATE, LAMBDA, BATCH, time.strftime("%Y-%m-%d_%H-%M-%S",
+                                                         time.localtime()))
+    predict_file = open(prediction_name, 'w')
 
-    # X = np.zeros((1, N_FEATURE + 1))
-    # predict_file.write('id,label\n')
+    X = np.zeros((1, N_FEATURE + 1))
+    predict_file.write('id,label\n')
 
-    # for i in range(M_TEST + 1):
-    #     a_line = test_file.readline().strip()
-    #     if a_line != "":
-    #         a_line = a_line.split(' ')  # seperate the data
+    for i in range(M_TEST + 1):
+        a_line = test_file.readline().strip()
+        if a_line != "":
+            a_line = a_line.split(' ')  # seperate the data
 
-    #         # get the label
-    #         id_test = int(a_line[0])
-    #         a_line.pop(0)  # throw the label away
+            # get the label
+            id_test = int(a_line[0])
+            a_line.pop(0)  # throw the label away
 
-    #         for pair in a_line:
-    #             pair = pair.split(':')
-    #             X[0, int(pair[0])] = float(pair[1])
+            for pair in a_line:
+                pair = pair.split(':')
+                X[0, int(pair[0])] = float(pair[1])
 
-    #         h = lr.sigmoid(np.dot(X, theta))
-    #         hypho = 0
-    #         if h > 0.5:
-    #             hypho = 1
-    #         else:
-    #             hypho = 0
+            h = lr.sigmoid(np.dot(X, theta))
+            hypho = 0
+            if h > 0.5:
+                hypho = 1
+            else:
+                hypho = 0
 
-    #         sys.stdout.write('predicting....%6d/%6d\r' % (i, M_TEST))
-    #         predict_file.write('%d,%d\n' % (id_test, hypho))
+            sys.stdout.write('predicting....%6d/%6d\r' % (i, M_TEST))
+            predict_file.write('%d,%d\n' % (id_test, hypho))
 
-    # test_file.close()
-    # predict_file.close()
+    test_file.close()
+    predict_file.close()
 
-    # print "\nprediction saved."
+    print "\nprediction saved."
 
 
 if __name__ == '__main__':
