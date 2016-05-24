@@ -1,19 +1,16 @@
 function plotLambda()
-X = dlmread("data/lambda.txt");
+Z = dlmread("data/lambda.txt");
 
-Y = X(:, 2);
-X = X(:, 1);
-
-figure
-%hold on;
-plot(X);
-xlabel("samples");
-ylabel("acurrency");
+error_train = Z(:, 1);
+error_val = Z(:, 2);
 
 figure
-%hold on;
-plot(Y);
-xlabel("samples");
-ylabel("average cost");
+xlabel("lambda No.");
+ylabel("Cost");
+
+hold on;
+plot(error_train, 'color', 'red');
+plot(error_val, 'color', 'green');
+legend('train set', 'validation set');
 
 end

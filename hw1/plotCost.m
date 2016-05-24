@@ -1,16 +1,12 @@
 function plotCost()
 Z = dlmread("data/cost.txt");
 
-#Y = Z(2, :);
 X = Z(:, 1);
 
 figure
-xlabel("m*100");
-ylabel("Cost");
-
-hold on;
+xlabel("Iter");
+ylabel("Current Cost");
+legend(1);
 plot(X, 'color', 'red');
-#plot(Y, 'color', 'green');
-legend('train set');
 
 end
