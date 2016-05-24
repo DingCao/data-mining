@@ -5,6 +5,8 @@ Copyright (c) huangjj27@SYSU (SNO: 13331087). ALL RIGHTS RESERVERD.
 """
 # !/usr/bin/python2
 
+from os import system
+
 import numpy as np
 import time
 
@@ -13,18 +15,16 @@ import sys
 import lr
 
 import params
-from params import M_PARAM_TRAIN
 from params import M_TEST
-from params import N_FEATURE
+from params import N_REDUCED
 from params import BATCH
 
 from params import ALPHA
 from params import UPDATE_RATE
-from params import ITERS
+# from params import ITERS
 from params import SPAN
-from params import BATCH
+# from params import BATCH
 from params import LAMBDA
-from os import system
 
 from lr import train_lr_gd
 from lr import lr_cost
@@ -32,17 +32,17 @@ from lr import lr_cost
 
 def main():
     print "training data..."
-    train_file = open(params.TRAIN_FILE, 'r')
+    train_file = open(params.REDUCED_FILE, 'r')
 
     flag = 1
     outer = 1
-    theta = np.zeros((N_FEATURE + 1, 1))
+    theta = np.zeros((N_REDUCED + 1, 1))
     costs = []
     alpha = ALPHA
     cost = 0.0
 
     while flag:
-        X_train = np.zeros((BATCH, N_FEATURE))
+        X_train = np.zeros((BATCH, N_REDUCED))
         y_train = np.zeros((BATCH, 1))
 
         for i in range(BATCH):
@@ -65,12 +65,12 @@ def main():
             theta = theta - alpha * grad
             # costs.append(cost)
 
-        # if outer > 100: flag = 0
+            # if outer > 100: flag = 0
         if outer % SPAN == 0:
             alpha = alpha * UPDATE_RATE
             costs.append(cost)
-            sys.stdout.write('processing: %6d, cost: %f, alpha: %.3e\r' % (
-                outer, cost, alpha))
+            sys.stdout.write('processing: %6d, cost: %f, alpha: %.3e\r' %
+                             (outer, cost, alpha))
 
         outer += 1
     print ''
@@ -93,7 +93,7 @@ def main():
                                                          time.localtime()))
     predict_file = open(prediction_name, 'w')
 
-    X = np.zeros((1, N_FEATURE + 1))
+    X = np.zeros((1, N_REDUCED + 1))
     predict_file.write('id,label\n')
 
     for i in range(M_TEST + 1):
