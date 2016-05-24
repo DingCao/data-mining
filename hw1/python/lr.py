@@ -64,7 +64,10 @@ def cost_logistic(h, label, m):
     return a_cost[0, 0]
 
 
-cost = {"logistic": cost_logistic, "linear": cost_linear}
+cost = {
+    "logistic": cost_logistic,
+    "linear": cost_linear
+}
 
 
 def lr_cost(lrtype, X, label, theta, a_lambda=0):
