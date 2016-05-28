@@ -6,17 +6,18 @@ Copyright (c) huangjj27@SYSU (SNO: 13331087). ALL RIGHTS RESERVERD.
 import time
 
 # the number of samples used for chosing param and do the cross validation.
-M_PARAM_TRAIN = 20000
-M_PARAM_VALIDATE = 5000
+M_PARAM_TRAIN = 20
+M_PARAM_VALIDATE = 10
 BATCH = 1000  # how many sample to used in a mini-batch gd iteration
 
 # the number of samples used for trains and predictions.
 M_TRAIN = 25000
 M_TEST = 25000
 N_FEATURE = 384
+N_HIDDEN = 100
 
 # intial params
-ALPHA = 3e-2
+ALPHA = 3e-5
 ALPHAS = [3e-2, 1e-2, 3e-3, 1e-3, 3e-4, 1e-4, 3e-5, 1e-5, 3e-6, 1e-6]
 UPDATE_RATE = 0.97
 LAMBDA = 0

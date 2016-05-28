@@ -32,7 +32,7 @@ def get_validation(train_file_name, x_train_file_name, x_validation_file_name):
     x_validation_file = open(x_validation_file_name, "w+")
 
     train_file.readline()
-    for i in range(M_PARAM_TRAIN):
+    for i in range(M_PARAM_TRAIN+1):
         a_line = train_file.readline()
         x_train_file.write(a_line)
 
