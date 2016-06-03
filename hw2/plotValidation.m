@@ -5,7 +5,7 @@ error_train = Z(:, 1);
 error_val = Z(:, 2);
 
 figure
-xlabel("m*100, batch=100");
+xlabel("m*100, iters=400");
 ylabel("Cost");
 
 hold on;

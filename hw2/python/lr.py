@@ -3,8 +3,6 @@
 Copyright (c) huangjj27@SYSU (SNO: 13331087). ALL RIGHTS RESERVERD.
 
 """
-import sys
-
 from numpy import dot
 from numpy import exp
 from numpy import hstack
@@ -156,7 +154,7 @@ def train_lr_gd(lrtype,
 
         if i % span == 0 or i == iters:
             cost_list.append(J)
-            sys.stdout.write('iter: %4d/%4d, cost: %f\r' % (i, iters, J))
+            print 'iter: %4d/%4d, cost: %f\r' % (i, iters, J),
     print ''
 
-    return [cost_list, theta]
+    return cost_list, theta

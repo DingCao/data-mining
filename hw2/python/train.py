@@ -3,19 +3,15 @@
 Copyright (c) huangjj27@SYSU (SNO: 13331087). ALL RIGHTS RESERVERD.
 
 """
-# !/usr/bin/python2
-
-from os import system
-
+#!/usr/bin/python2
 import numpy as np
 import time
-
-import sys
 
 import lr
 
 import params
 from params import M_TEST
+from params import M_TRAIN
 from params import N_REDUCED
 from params import BATCH
 
@@ -37,42 +33,25 @@ def main():
     flag = 1
     outer = 1
     theta = np.zeros((N_REDUCED + 1, 1))
-    costs = []
-    alpha = ALPHA
-    cost = 0.0
 
-    while flag:
-        X_train = np.zeros((BATCH, N_REDUCED))
-        y_train = np.zeros((BATCH, 1))
+    X_train = np.zeros((100*BATCH, N_REDUCED))
+    y_train = np.zeros((100*BATCH, 1))
 
-        for i in range(BATCH):
-            a_line = train_file.readline().strip()
-            if a_line != "":
-                a_line = a_line.split(' ')  # seperate the data
 
-                # get the label
-                y_train[i] = int(a_line[0])
-                a_line.pop(0)  # throw the label away
+    for i in range(100*BATCH):
+        a_line = train_file.readline().strip()
+        if a_line != "":
+            a_line = a_line.split(' ')  # seperate the data
 
-                for pair in a_line:
-                    pair = pair.split(':')
-                    X_train[i, int(pair[0]) - 1] = float(pair[1])
-            else:
-                flag = 0
+            # get the label
+            y_train[i] = int(a_line[0])
+            a_line.pop(0)  # throw the label away
 
-        if flag:
-            [cost, grad] = lr_cost('logistic', X_train, y_train, theta)
-            theta = theta - alpha * grad
-            # costs.append(cost)
+            for pair in a_line:
+                pair = pair.split(':')
+                X_train[i, int(pair[0]) - 1] = float(pair[1])
 
-            # if outer > 100: flag = 0
-        if outer % SPAN == 0:
-            alpha = alpha * UPDATE_RATE
-            costs.append(cost)
-            sys.stdout.write('processing: %6d, cost: %f, alpha: %.3e\r' %
-                             (outer, cost, alpha))
-
-        outer += 1
+    costs, theta = train_lr_gd('logistic', X_train, y_train, ALPHA, iters=400, span=10, batch=BATCH)
     print ''
 
     costs = np.transpose(costs)
@@ -86,12 +65,9 @@ def main():
 
     # predicting
 
-    print "predicting..."
-    test_file = open(params.TEST_FILE, 'r')
-    prediction_name = 'F:/Git_file/data-mining/hw2/predictions/predict_alpha%.2f_update%.2f_lambda%.2f_batch%d_%s.txt' % (
-        ALPHA, UPDATE_RATE, LAMBDA, BATCH, time.strftime("%Y-%m-%d_%H-%M-%S",
-                                                         time.localtime()))
-    predict_file = open(prediction_name, 'w')
+    print "predicting...",
+    test_file = open(params.REDUCE_TEST, 'r')
+    predict_file = open(params.PREDICTION_FILE, 'w')
 
     X = np.zeros((1, N_REDUCED + 1))
     predict_file.write('id,label\n')
@@ -116,7 +92,8 @@ def main():
             else:
                 hypho = 0
 
-            sys.stdout.write('predicting....%6d/%6d\r' % (i, M_TEST))
+            if not i % 1000 or i is M_TEST-1:
+                print 'predicting... %6d/%6d\r' % (i, M_TEST),
             predict_file.write('%d,%d\n' % (id_test, hypho))
 
     test_file.close()
@@ -127,4 +104,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    system("pause")

@@ -3,12 +3,12 @@
 Copyright (c) huangjj27@SYSU (SNO: 13331087). ALL RIGHTS RESERVERD.
 
 """
-
+import time
 # the number of samples used for chosing param and do the cross validation.
 M_PARAM_TRAIN = 10000
-M_PARAM_VALIDATE = 10000
+M_PARAM_VALIDATE = 2500
 N_FEATURE = 11392
-N_REDUCED = 5550
+N_REDUCED = 5548
 BATCH = 1000    # how many sample to used in a mini-batch gd iteration
 
 # the number of samples used for trains and predictions.
@@ -29,9 +29,9 @@ PRINT_EACH = 100
 CONVERGED = 1e-6
 CONVERGED_COUNT = 100
 
-SPAN = 100
-SPAN_OUTER = 100
-ITERS = 200
+SPAN = 10
+SPAN_OUTER = 500
+ITERS = 400
 
 # some useful file name
 TRAIN_FILE = "F:/Git_file/data-mining/hw2/data/train.txt"
@@ -45,3 +45,6 @@ TEST_FILE = "F:/Git_file/data-mining/hw2/data/test.txt"
 PCA_FILE = "F:/Git_file/data-mining/hw2/data/pca.txt"
 FEATURE_MAP = "F:/Git_file/data-mining/hw2/theta/map.txt"
 REDUCED_FILE = "F:/Git_file/data-mining/hw2/data/reduced.txt"
+REDUCE_TEST = "F:/Git_file/data-mining/hw2/data/reduced_test.txt"
+PREDICTION_FILE = 'F:/Git_file/data-mining/hw1/predictions/predict_%s_alpha%.1e_lambda%.2f_iters%d.txt' % (
+    time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime()), ALPHA, LAMBDA, ITERS)
