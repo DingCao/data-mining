@@ -4,9 +4,10 @@ Z = dlmread("data/cost.txt");
 X = Z(:, 1);
 
 figure
-xlabel("Iter");
+hold on
+xlabel("Iter*10");
 ylabel("Current Cost");
-legend(1);
 plot(X, 'color', 'red');
+legend("train set")
 
 end

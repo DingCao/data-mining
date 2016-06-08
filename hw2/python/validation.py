@@ -15,6 +15,7 @@ from params import M_PARAM_VALIDATE
 from params import N_REDUCED
 from params import ALPHA
 from params import LAMBDA
+from params import BATCH
 
 from lr import train_lr_gd
 from lr import lr_cost
@@ -29,8 +30,8 @@ def validate(X_train, y_train, X_val, y_val, alpha, a_lambda, iters, span):
         print 'process: %d/%d' % (i, M_PARAM_TRAIN / span)
 
         [cost, theta] = train_lr_gd('logistic', X_train[0:(i * span), :],
-                                    y_train[0:(i * span), :], alpha, a_lambda,
-                                    iters, params.SPAN)
+                                    y_train[0:(i * span), :], alpha,
+                                    iters=iters, span=params.SPAN, batch=BATCH)
         [cost_trained, grad] = lr_cost('logistic', X_train[0:(i * span), :],
                                        y_train[0:(i * span), :], theta)
         error_train.append(cost_trained)

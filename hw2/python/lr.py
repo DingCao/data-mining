@@ -3,11 +3,17 @@
 Copyright (c) huangjj27@SYSU (SNO: 13331087). ALL RIGHTS RESERVERD.
 
 """
+# import theano
+# from theano import tensor
+# from theano.tensor import dot
+# from theano.tensor import exp
+# from theano.tensor import log
+import numpy as np
 from numpy import dot
 from numpy import exp
-from numpy import hstack
 from numpy import log
 from numpy import ones
+from numpy import hstack
 from numpy import vstack
 from numpy import zeros
 
@@ -102,6 +108,8 @@ def train_lr_gd(lrtype,
                 label,
                 alpha,
                 a_lambda=0,
+                update_span=10000,
+                update_rate=0.8,
                 iters=200,
                 span=1,
                 batch=0):
@@ -152,9 +160,12 @@ def train_lr_gd(lrtype,
 
         last_cost = J
 
+        if i % update_span == 0:
+            alpha = alpha*update_rate + 1e-4
+
         if i % span == 0 or i == iters:
             cost_list.append(J)
-            print 'iter: %4d/%4d, cost: %f\r' % (i, iters, J),
+            print 'iter: %4d/%4d, cost: %f, alpha: %.3e\r' % (i, iters, J, alpha),
     print ''
 
     return cost_list, theta
