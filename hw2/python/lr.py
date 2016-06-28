@@ -3,40 +3,51 @@
 Copyright (c) huangjj27@SYSU (SNO: 13331087). ALL RIGHTS RESERVERD.
 
 """
-import sys
-
+# import theano
+# from theano import tensor
+# from theano.tensor import dot
+# from theano.tensor import exp
+# from theano.tensor import log
+import numpy as np
 from numpy import dot
 from numpy import exp
-from numpy import hstack
 from numpy import log
 from numpy import ones
+from numpy import hstack
 from numpy import vstack
 from numpy import zeros
 
 from random import randint
+
+from params import CONVERGED
+from params import CONVERGED_COUNT
 
 
 def sigmoid(z):
     return 1 / (1 + exp(-z))
 
 
-def hyphothesis_logistic(X, theta, m):
-    hyphothesis = sigmoid(dot(X, theta))
-    if m == 1:
-        hyphothesis = hyphothesis[0, 0]
+def hypho(lrtype, X, theta, m):
+    """computes hyphothesis for logistic regression or linear regression
 
-    return hyphothesis
+    Args:
+        lrtype: decides to use which regression. dafault is the linear one
+        X:  the samples matrix to predict. a sample each row
+        theta: the weights for X
+        m: the number of samples
 
-
-def hyphothesis_linear(X, theta, m):
+    Returns:
+        hyphothesis: the prediction vector for X
+    """
     hyphothesis = dot(X, theta)
+
+    if lrtype == 'logistic':
+        hyphothesis = sigmoid(hyphothesis)
+
     if m == 1:
         hyphothesis = hyphothesis[0, 0]
 
     return hyphothesis
-
-
-hypho = {"logistic": hyphothesis_logistic, "linear": hyphothesis_linear}
 
 
 def cost_linear(h, label, m):
@@ -45,6 +56,13 @@ def cost_linear(h, label, m):
 
 
 def cost_logistic(h, label, m):
+    """
+    computes loss for logistic regression betwen given prediction vector h
+    and lalbel vector with their size m. make sure their sizes are the same!
+
+    Returns:
+        a_cost:
+    """
     a_cost = (-1.0 / m) * (dot(label.T, log(h)) + dot(
         (1 - label).T, log(1 - h)))
     return a_cost[0, 0]
@@ -74,7 +92,7 @@ def lr_cost(lrtype, X, label, theta, a_lambda=0):
     X = hstack([ones((m, 1)), X])  # NOTE: X matrix is without bias
 
     # computes
-    h = hypho[lrtype](X, theta, m)  # the hyphothesis vector
+    h = hypho(lrtype, X, theta, m)  # the hyphothesis vector
     J = cost[lrtype](h, label, m)  # the loss between labels and hyphothesis
     grad = (1.0 / m) * dot(X.T, (h - label))  # the grad for theta
 
@@ -90,13 +108,15 @@ def train_lr_gd(lrtype,
                 label,
                 alpha,
                 a_lambda=0,
+                update_span=10000,
+                update_rate=0.8,
                 iters=200,
                 span=1,
                 batch=0):
     """train a lr model with gradient descenting
 
     Args:
-        batch: subset of the samples
+        batch: subset size of the samples
         alpha: learning rate
         iters: times for training
         X_train: sample matrix
@@ -112,16 +132,16 @@ def train_lr_gd(lrtype,
     """
 
     # get the shape of sample matrix
-    m = X_train.shape[0]
-    n = X_train.shape[1]
+    m, n = X_train.shape
 
     theta = zeros((X_train.shape[1] + 1, 1))
 
     cost_list = []
+    last_cost = 0
+    break_count = 0
     for i in range(1, iters + 1):
         if 0 < batch <= m / 2:
-            choosen = randint(0,
-                              m / batch - 1)  # choose a batch from the X_train
+            choosen = randint(0, m / batch - 1)  # choose a batch from X_train
             X_batch = X_train[choosen:choosen + batch]
             y_batch = label[choosen:choosen + batch]
             [J, grad] = lr_cost(lrtype, X_batch, y_batch, theta, a_lambda)
@@ -130,9 +150,22 @@ def train_lr_gd(lrtype,
 
         theta = theta - alpha * grad  # gradient descenting
 
+        if abs(last_cost - J) < CONVERGED:
+            break_count += 1
+        else:
+            break_count = 0
+
+        if break_count >= CONVERGED_COUNT:
+            break
+
+        last_cost = J
+
+        if i % update_span == 0:
+            alpha = alpha*update_rate + 1e-4
+
         if i % span == 0 or i == iters:
             cost_list.append(J)
-            sys.stdout.write('iter: %4d/%4d, cost: %f\r' % (i, iters, J))
+            print 'iter: %4d/%4d, cost: %f, alpha: %.3e\r' % (i, iters, J, alpha),
     print ''
 
-    return [cost_list, theta]
+    return cost_list, theta

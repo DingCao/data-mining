@@ -12,9 +12,10 @@ from os import system
 # get params
 from params import M_PARAM_TRAIN
 from params import M_PARAM_VALIDATE
-from params import N_FEATURE
+from params import N_REDUCED
 from params import ALPHA
 from params import LAMBDA
+from params import BATCH
 
 from lr import train_lr_gd
 from lr import lr_cost
@@ -29,8 +30,8 @@ def validate(X_train, y_train, X_val, y_val, alpha, a_lambda, iters, span):
         print 'process: %d/%d' % (i, M_PARAM_TRAIN / span)
 
         [cost, theta] = train_lr_gd('logistic', X_train[0:(i * span), :],
-                                    y_train[0:(i * span), :], alpha, a_lambda,
-                                    iters, span, params.BATCH)
+                                    y_train[0:(i * span), :], alpha,
+                                    iters=iters, span=params.SPAN, batch=BATCH)
         [cost_trained, grad] = lr_cost('logistic', X_train[0:(i * span), :],
                                        y_train[0:(i * span), :], theta)
         error_train.append(cost_trained)
@@ -49,7 +50,7 @@ def main():
     train_file = open(params.X_TRAIN_FILE, 'r')
     validation_file = open(params.X_VALIDATION_FILE, 'r')
 
-    X_train = np.zeros((M_PARAM_TRAIN, N_FEATURE))
+    X_train = np.zeros((M_PARAM_TRAIN, N_REDUCED))
     y_train = np.zeros((M_PARAM_TRAIN, 1))
     for i in range(M_PARAM_TRAIN):
         a_line = train_file.readline().strip()
@@ -63,7 +64,7 @@ def main():
             pair = pair.split(':')
             X_train[i, int(pair[0]) - 1] = float(pair[1])
 
-    X_val = np.zeros((M_PARAM_VALIDATE, N_FEATURE))
+    X_val = np.zeros((M_PARAM_VALIDATE, N_REDUCED))
     y_val = np.zeros((M_PARAM_VALIDATE, 1))
     for i in range(M_PARAM_VALIDATE):
         a_line = validation_file.readline().strip()
@@ -81,7 +82,7 @@ def main():
     validation_file.close()
 
     errors = validate(X_train, y_train, X_val, y_val, ALPHA, LAMBDA,
-                      params.ITERS, params.SPAN)
+                      params.ITERS, params.SPAN_OUTER)
 
     errors = np.transpose(errors)
     np.savetxt(params.VALIDATED_FILE, errors)

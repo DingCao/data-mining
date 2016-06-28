@@ -59,10 +59,18 @@ data*
 SGD*
 *.pyc
 *.sublime-project
+*.sublime-workspace
 hw2/python/large-scale-classification.sublime-workspace
 hw2/python/formatter.bat
 hw2/python/.idea/dictionaries/DC.xml
 *.xml
 .idea/
+<<<<<<< HEAD
+hw2/python/octave-workspace
+hw2/octave-workspace
+*.project
+hw2/.pydevproject
+=======
 *.sublime-workspace
 hw2/python/octave-workspace
+>>>>>>> refs/remotes/origin/master
